@@ -25,6 +25,10 @@
         const name = input.value;
         fetch("https://script.google.com/macros/s/AKfycbyjcax1_bopRwkGtNFBLL8yDg9Ht4tdrcvRmymvgILQr0tUqmqZbYIERtsi0fgNnNw/exec",{
             method: "POST",
+            mode: "no-cors",
+            headers:{
+                "Content-Type": "application/json
+            }
             body: JSON.stringify({
                 name: name
             })
