@@ -13,71 +13,67 @@
     <div id="result"></div>
 
     <script>
-       const input = document.getElementById("nameInput");
-       const button = document.getElementById("checkbutton");
-       const result = document.getElementById("result");
-       button. addEventListener("click",function (){
-        if(input.value === ""){
-            result.innerHTML = "好きな人の名前を入力してね！";
-            return;
-        }
+     const input = document.getElementById("nameInput");
+const button = document.getElementById("checkbutton");
+const result = document.getElementById("result");
 
-        const name = input.value;
-        fetch("https://script.google.com/macros/s/AKfycbyjcax1_bopRwkGtNFBLL8yDg9Ht4tdrcvRmymvgILQr0tUqmqZbYIERtsi0fgNnNw/exec",{
-            method: "POST",
-            mode: "no-cors",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: name
-            })
-        });
-        document.body.innerHTML = `
-            <div style="
-                background:#ffd6eb;
-                height:100vh;
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-                align-items:center;
-                font-family:sans-serif;
-            ">
-                <h1>💕AI恋愛分析中💕</h1>
-                <h2>■■■■■■■■■■■■ 100%</h2>
-            </div>
-        `;
-        setTimeout(function () {
-            document.body.innerHTML = `
-                <div style="
-                    background:black;
-                    color:red;
-                    height:100vh;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:center;
-                    align-items:center;
-                    text-align:center;
-                    font-family:sans-serif;
-                ">
-                    <h1 style="font-size:60px;">
-                        残念～ｗｗｗ
-                    </h1>
-                    <h2>
-                        君の好きな人を知っちゃったｗｗｗｗｗｗ
-                    </h2>
-                    <p style="color:yellow;">
-                        騙されたね～ｗｗｗｗ乙ｗｗｗｗ
-                    </p>
-                </div>
-            `;
-        }, 500);
-    });
+button.addEventListener("click", function () {
+  if (input.value === "") {
+    result.innerHTML = "好きな人の名前を入力してね！";
+    return;
+  }
+
+  const name = input.value;
+
+ 
+  fetch("https://google.com", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain"
+    },
+    body: JSON.stringify({
+      name: name
+    })
+  });
 
 
+  document.body.innerHTML = `
+    <div style="
+      background: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: sans-serif;
+    ">
+      <h1>❤️ AI恋愛分析中 ❤️</h1>
+      <h2>100%</h2>
+    </div>
+  `;
 
 
-
+  setTimeout(function () {
+    document.body.innerHTML = `
+      <div style="
+        background: black;
+        color: red;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: sans-serif;
+      ">
+        <h1 style="font-size: 60px;">残念〜www</h1>
+        <p style="color: yellow; font-size: 24px;">騙されたね〜WWWW乙WWWW</p>
+      </div>
+    `;
+  }, 10000);
+});
 
     </script>
 
